@@ -1,6 +1,6 @@
 from email.message import EmailMessage
-from smtp_controller import SMTPController
-from api_mailgun import MailgunMessage
+from .smtp_controller import SMTPController
+from .api_mailgun import MailgunMessage
 
 
 async def server(loop, config):

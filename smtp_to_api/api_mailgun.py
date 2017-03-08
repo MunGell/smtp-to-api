@@ -1,5 +1,5 @@
 import requests
-from message import ApiMessage
+from .message import ApiMessage
 
 
 class MailgunMessage(ApiMessage):
