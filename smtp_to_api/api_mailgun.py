@@ -15,8 +15,6 @@ class MailgunMessage(ApiMessage):
         if html is not None:
             data['html'] = html
 
-        print(data)
-
         return requests.post(
             "https://api.mailgun.net/v3/{}/messages".format(config.get('API', 'login')),
             auth=("api", config.get('API', 'api_key')),

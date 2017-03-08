@@ -7,12 +7,6 @@ class ApiMessage(Message):
         self.config = config
 
     def handle_message(self, message):
-        # print(message.items())
-        # body =
-        # print(body)
-        # maintype, subtype = part.get_content_type().split('/')
-        # type = 'html' if subtype == 'html' else 'text'
-
         from_address = message.get('From')
         to_addresses = message.get('To')
         subject = message.get('Subject')
