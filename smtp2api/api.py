@@ -2,11 +2,16 @@ from aiosmtpd.handlers import Message
 
 
 class ApiMessage(Message):
-    def __init__(self, config, message_class=None):
-        super(ApiMessage, self).__init__(message_class=message_class)
-        self.config = config
-
     def handle_message(self, message):
+        """
+        Overrides message handler method.
+
+        Pass email message information to API method.
+
+        Parameters
+        ----------
+        message : email.message.EmailMessage
+        """
         from_address = message.get('From')
         to_addresses = message.get('To')
         subject = message.get('Subject')

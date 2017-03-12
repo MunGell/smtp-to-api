@@ -1,0 +1,14 @@
+[Unit]
+Description=SMTP to API Daemon
+After=network-online.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/smtp-to-api
+Type=simple
+Environment=PYTHONPATH=.
+ExecStart=/var/www/smtp-to-api/.venv/bin/smtpd -n -c smtp2api.handler -l :2525
+
+[Install]
+WantedBy=multi-user.target

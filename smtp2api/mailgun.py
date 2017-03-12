@@ -1,8 +1,9 @@
 import requests
-from .message import ApiMessage
+
+from smtp2api.api import ApiMessage
 
 
-class MailgunMessage(ApiMessage):
+class Mailgun(ApiMessage):
     def api_send(self, config, from_address, to_addresses, subject, text, html=None,
                  cc=None, bcc=None, attachments=None):
         data = {
